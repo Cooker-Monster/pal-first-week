@@ -13,6 +13,8 @@ public class ProjectClient {
     }
 
     public ProjectInfo getProject(long projectId) {
-        return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
+        String url = registrationServerEndpoint + "/projects/" + projectId;
+        System.out.println("this is the url getting called"+url);
+        return restOperations.getForObject(url, ProjectInfo.class);
     }
 }
